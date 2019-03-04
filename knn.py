@@ -13,9 +13,9 @@ X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, test_s
 clf = neighbors.KNeighborsClassifier()
 clf.fit(X_train, y_train)
 accuracy = clf.score(X_test, y_test)
-print(round(100 * accuracy, 2))
+print("Prediction is {}%".format(round(100 * accuracy, 2)))
 
 example = np.array([4, 2, 1, 1, 1, 2, 3, 2, 1])
 example = example.reshape(1, -1)
 prediction = clf.predict(example)
-print("The Prediction is {}".format(prediction))
+print("The Prediction is {}".format(prediction[0]))
